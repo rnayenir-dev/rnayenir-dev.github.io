@@ -1,13 +1,147 @@
-*{
-    background-color: white;
-}
-h1 {
-    color: darkred;
-}
-h1:hover{
-    color: firebrick;
+/* ===== Reset e base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    align-items: center;
+:root {
+  --cor-fundo-menu: #222222;
+  --cor-destaque: #f59e0b;
+  --cor-amarelo: #fde992;
+  --cor-texto: #222222;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--cor-texto);
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Menu (igual em todas as páginas) ===== */
+.menu {
+  background: var(--cor-fundo-menu);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+}
+
+.menu .logo,
+.menu a {
+  color: var(--cor-destaque);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.menu a:hover,
+.menu a.ativo {
+  text-decoration: underline;
+}
+
+/* ===== Página Home ===== */
+.hero {
+  flex: 1;
+  background: var(--cor-amarelo);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  padding: 48px 16px;
+  margin: 16px;
+  border-radius: 12px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+}
+
+/* ===== Página Projetos ===== */
+.projetos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 48px 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.card {
+  background: var(--cor-amarelo);
+  border: 1px solid var(--cor-texto);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+}
+
+.card a {
+  color: var(--cor-texto);
+  font-size: 0.9rem;
+}
+
+/* ===== Página Sobre ===== */
+.sobre {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  padding: 48px 32px;
+}
+
+.foto {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--cor-amarelo);
+  border: 1px solid var(--cor-texto);
+}
+
+.sobre p {
+  max-width: 360px;
+  line-height: 1.6;
+}
+
+/* ===== Responsivo (celular) ===== */
+@media (max-width: 700px) {
+  .menu {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .projetos {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
 }

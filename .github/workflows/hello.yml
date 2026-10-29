@@ -14,3 +14,9 @@ jobs:
         run: echo "Olá mundo real"
       - name: Resposta
         run: echo "A exito esta chegando"
+      - name: verificar se e humano
+        run: echo "qual a reposta de 2 + 2"
+      - name: Resposta do capchat
+        run: echo "$((2 + 2))"
+        
+      
